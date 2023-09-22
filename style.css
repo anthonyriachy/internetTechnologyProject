@@ -61,3 +61,26 @@ table{
 .research-title{
 	text-align:center;
 }
+
+/* cv section */
+
+.parent{
+	position:relative;
+	background-color: black;
+	width: 100%;
+}
+.left-section{
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	background-color: red;
+	width:70%;
+}
+.right-section{
+	background-color: blue;
+	position :absolute;
+	right:0;
+	top:0;
+	width:30%;
+}
