@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+	box-sizing: border-box;
+}
 body{
 	font-family: 'Roboto', sans-serif;
+	margin:0;
 }
 .page-1-h1{
 	color:#736fff;
@@ -22,19 +26,33 @@ table{
 	width: 100%;
 }
 .nav-bar{
-	width: 100%;
+	display:flex;
+	align-items:center;
+	height:65px;
+	margin-top:0px;
 	padding: 20px;
-	border: 1px solid black;
-	list-style-type: none;
-	text-align: center;
+	background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 }
-.nav-bar>li{
-	display: inline;
-	margin: 20px;
+.nav-bar li{
+	display:flex;
+	align-items: center;
+	padding:10px;
+	height:65px;
+}
+.nav-bar a:hover{
+	background-color: red;
+	transition: 0.3s;
+}
+.nav-bar a{
+	text-decoration: none;
+	margin-left:auto;
+	margin-right:auto;
+	color:black;
+	height:65px;
 }
 #side-bar{
 	text-align: center;
-	margin:0;
+	margin: 0;
 	padding:60px 0 0 0;
 	position: absolute;
 	top:0;
