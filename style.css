@@ -50,36 +50,30 @@ table {
 	height: 65px;
 	margin-top: 0px;
 	background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-}
-
-.nav-bar div {
+  }
+  
+  .nav-bar div {
 	display: flex;
 	align-items: center;
 	width: 25%;
 	text-align: center;
-
-}
-
-.nav-bar div a {
+  }
+  
+  .nav-bar div a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width:400px;
-}
-
-.nav-bar div:hover {
-	background-color: red;
-	transition: 0.3s;
-}
-
-.nav-bar a {
+	width: 100%; /* Set the anchor tag width to 100% */
 	text-decoration: none;
-	margin-left: auto;
-	margin-right: auto;
 	color: black;
 	height: 65px;
-}
-
+  }
+  
+  .nav-bar div:hover {
+	background-color: red;
+	transition: 0.3s;
+  }
+  
 #side-bar {
 	display: none;
 	flex-direction: column;
