@@ -1,115 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-*{
+
+* {
 	box-sizing: border-box;
 }
-body{
+
+.research-body {
 	font-family: 'Roboto', sans-serif;
+	margin:40px;
+}
+
+.mainPage-body{
 	margin:0;
 }
-.page-1-h1{
-	color:#736fff;
-	text-align:center;
+
+.schedule-body{
+	height: auto;
 }
-tr:nth-child(even){
-	background-color:#cccccd;
-}
-td ,th{
-	padding:20px;
+
+.page-1-h1 {
+	color: #736fff;
 	text-align: center;
-	border:1px solid #cccccd;
 }
-td,th,table{
+
+tr:nth-child(even) {
+	background-color: #cccccd;
+}
+
+td,
+th {
+	padding: 20px;
+	text-align: center;
+	border: 1px solid #cccccd;
+}
+
+td,
+th,
+table {
 	border-collapse: collapse;
 }
-table{
-	
+
+table {
+
 	width: 100%;
 }
-.nav-bar{
-	display:flex;
-	align-items:center;
-	height:65px;
-	margin-top:0px;
-	padding: 20px;
+
+.nav-bar {
+	display: flex;
+	align-items: center;
+	height: 65px;
+	margin-top: 0px;
 	background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
 }
-.nav-bar li{
-	display:flex;
+
+.nav-bar div {
+	display: flex;
 	align-items: center;
-	padding:10px;
-	height:65px;
+	width: 25%;
+	text-align: center;
+
 }
-.nav-bar a:hover{
+
+.nav-bar div a {
+	display: flex;
+	align-items: center;
+
+}
+
+.nav-bar div:hover {
 	background-color: red;
 	transition: 0.3s;
 }
-.nav-bar a{
+
+.nav-bar a {
 	text-decoration: none;
-	margin-left:auto;
-	margin-right:auto;
-	color:black;
-	height:65px;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	height: 65px;
 }
-#side-bar{
+
+#side-bar {
+	display: none;
+	flex-direction: column;
+	align-items: stretch;
 	text-align: center;
 	margin: 0;
-	padding:60px 0 0 0;
+	padding: 60px 0 0 0;
 	position: absolute;
-	top:0;
+	top: 0;
 	bottom: 0;
 	z-index: 1;
 	background-color: grey;
 	list-style-type: none;
-	align-items: center;
+	align-items: stretch;
 	justify-content: center;
-	border:1px solid black;
-	display: none;
+	border: 1px solid black;
+	
 }
-#side-bar >li{
-	margin: 50px ;
+
+.side-bar-elements {
+	margin: 50px;
+	height: 25vh;
 }
-.button{
+
+.sideBar-close-button{
+	position: absolute;
+	top:0;
+	right:0;
+	margin:10px;
+}
+
+
+.button {
 	border: 1px solid black;
 	text-indent: 10px;
 }
-.research{
-	margin-bottom:30px;
-	text-indent:6%;
+
+.research {
+	margin-bottom: 30px;
+	text-indent: 6%;
 }
-.research-title{
-	text-align:center;
+
+.research-title {
+	text-align: center;
 }
 
 /* cv section */
 
-.parent{
-	position:relative;
+.parent {
+	position: relative;
 	background-color: black;
 	width: 100%;
 }
-.left-section{
+
+.left-section {
 	position: absolute;
-	top:0;
-	height:auto;
-	left:0;
+	top: 0;
+	height: auto;
+	left: 0;
 	background-color: red;
-	padding-left:50px;
-	width:61.7%;
-}
-.right-section{
-	background-color: blue;
-	position :absolute;
-	right:0;
-	top:0;
-	width:31.6%;
+	padding-left: 50px;
+	width: 61.7%;
 }
 
-.right-section{
-	padding-left:  50px
+.right-section {
+	background-color: blue;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 31.6%;
 }
-.experience{
-	margin-top:100px;
+
+.right-section {
+	padding-left: 50px
 }
-.skills{
-	margin-top:100px;
+
+.experience {
+	margin-top: 100px;
+}
+
+.skills {
+	margin-top: 100px;
 }

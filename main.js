@@ -4,7 +4,7 @@ function displaySideBar(){
 }
 
 function openSideBar() {
-    document.getElementById("side-bar").style.display= "block";
+    document.getElementById("side-bar").style.display= "flex";
   }
 
   function closeSideBar() {
