@@ -10,10 +10,12 @@
 }
 
 .mainPage-body{
+	font-family: 'Roboto', sans-serif;
 	margin:0;
 }
 
 .schedule-body{
+	font-family: 'Roboto', sans-serif;
 	height: auto;
 }
 
@@ -75,7 +77,8 @@ table {
   }
   
 #side-bar {
-	display: none;
+	display: flex;
+	overflow-x: hidden;
 	flex-direction: column;
 	align-items: stretch;
 	text-align: center;
@@ -90,27 +93,40 @@ table {
 	align-items: stretch;
 	justify-content: center;
 	border: 1px solid black;
+	transition: 0.4s;
+	width:0;
 	
 }
 
 .side-bar-elements {
 	margin: 50px;
-	height: 25vh;
+	height: 20vh;
 }
-
+#side-bar a{
+	text-decoration: none;
+	font-size:24px;
+	color: #1a1919;
+	transition: 0.3s;
+}
+#side-bar a:hover, .sideBar-close-button:hover {
+	color: rgb(255, 255, 255);
+}
 .sideBar-close-button{
 	position: absolute;
-	top:0;
-	right:0;
-	margin:10px;
+  	top: 0;
+  	right: 25px;
+  	font-size: 36px;
+  	margin-left: 50px;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
-
-.button {
-	border: 1px solid black;
+.sideBar-open-button {
 	text-indent: 10px;
+	cursor:pointer;
+	font-size: 40px;
+	margin-left:4px;
 }
-
 .research {
 	margin-bottom: 30px;
 	text-indent: 6%;

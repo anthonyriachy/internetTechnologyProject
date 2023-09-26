@@ -1,168 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title> Project CSC360 </title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" href="style.css">
 	<script src="main.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<nav id="side-bar">
-	<div class="sideBar-close-button">
-		<button type="button" onclick="closeSideBar()" class=""><i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i></button>
-	</div>
-	<div class="side-bar-elements">
-		<a href="index.html">My research </a>
-	</div>
-	<div class="side-bar-elements">
-		<a href="index.html">My CV</a>
-	</div>
-	<div class="side-bar-elements">
-		<a href="schedule.html">My Schedule</a>
-	</div>
-	<div class="side-bar-elements">
-		<a href="arabic.html">arabic page</a>
-	</div>
-</nav>
 
-<body style="margin:0" class="schedu">
-	<button type="button" onclick="openSideBar()"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></button>
-	<table>
-		<tr>
-			<th>
-				Time\day
-			</th>
-			<th>
-				Monday
-			</th>
+<body style="margin:0" class="schedule-body">
+	<header>
+		<nav id="side-bar">
+			<div class="sideBar-close-button">
+				<span onclick="closeSideBar()">&times;</span>
+			</div>
+			<div class="side-bar-elements">
+				<a href="index.html">My research </a>
+			</div>
+			<div class="side-bar-elements">
+				<a href="cv.html">My CV</a>
+			</div>
+			<div class="side-bar-elements">
+				<a href="schedule.html">My Schedule</a>
+			</div>
+			<div class="side-bar-elements">
+				<a href="arabic.html">arabic page</a>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<span class="sideBar-open-button" onclick="openSideBar()">&#9776; </span>
+		<table>
+			<tr>
+				<th>
+					Time\day
+				</th>
+				<th>
+					Monday
+				</th>
 
-			<th>
-				Tuesday
-			</th>
+				<th>
+					Tuesday
+				</th>
 
-			<th>
-				wednesday
-			</th>
+				<th>
+					wednesday
+				</th>
 
-			<th>
-				Thursday
-			</th>
+				<th>
+					Thursday
+				</th>
 
-			<th>
-				Friday
-			</th>
-		</tr>
+				<th>
+					Friday
+				</th>
+			</tr>
 
-		<tr>
-			<td>
-				9:30-10:45
-			</td>
-			<td>
-				Internet Technology
-			</td>
-			<td>
-				general physics
-			</td>
-			<td>
+			<tr>
+				<td>
+					9:30-10:45
+				</td>
+				<td>
+					Internet Technology
+				</td>
+				<td>
+					general physics
+				</td>
+				<td>
 
-			</td>
-			<td>
-				general physics
-			</td>
-			<td>
-				Internet Technology
-			</td>
-		</tr>
+				</td>
+				<td>
+					general physics
+				</td>
+				<td>
+					Internet Technology
+				</td>
+			</tr>
 
-		<tr>
-			<td>
-				11:00-12:15
-			</td>
+			<tr>
+				<td>
+					11:00-12:15
+				</td>
 
-			<td>
-				operating systems
-			</td>
-			<td>
+				<td>
+					operating systems
+				</td>
+				<td>
 
-			</td>
+				</td>
 
-			<td>
+				<td>
 
-			</td>
-			<td>
+				</td>
+				<td>
 
-			</td>
+				</td>
 
-			<td>
-				operating systems
-			</td>
-		</tr>
+				<td>
+					operating systems
+				</td>
+			</tr>
 
-		<tr>
-			<td>
-				12:30-1:45
-			</td>
-			<td>
-				numerical methods
-			</td>
-			<td>
+			<tr>
+				<td>
+					12:30-1:45
+				</td>
+				<td>
+					numerical methods
+				</td>
+				<td>
 
-			</td>
+				</td>
 
-			<td>
+				<td>
 
-			</td>
-			<td>
+				</td>
+				<td>
 
-			</td>
+				</td>
 
-			<td>
-				numerical methods
-			</td>
-		</tr>
+				<td>
+					numerical methods
+				</td>
+			</tr>
 
-		<tr>
-			<td>
-				2:30-3:20
-			</td>
-			<td>
+			<tr>
+				<td>
+					2:30-3:20
+				</td>
+				<td>
 
-			</td>
-			<td>
-				project management
-			</td>
-			<td>
+				</td>
+				<td>
+					project management
+				</td>
+				<td>
 
-			</td>
-			<td>
-				project management
-			</td>
-			<td>
+				</td>
+				<td>
+					project management
+				</td>
+				<td>
 
-			</td>
-		</tr>
+				</td>
+			</tr>
 
-		<tr>
-			<td>
-				5:00-6:15
-			</td>
-			<td>
+			<tr>
+				<td>
+					5:00-6:15
+				</td>
+				<td>
 
-			</td>
-			<td>
-				computer networks
-			</td>
-			<td>
+				</td>
+				<td>
+					computer networks
+				</td>
+				<td>
 
-			</td>
-			<td>
-				computer networks
-			</td>
-			<td>
+				</td>
+				<td>
+					computer networks
+				</td>
+				<td>
 
-			</td>
-		</tr>
-	</table>
+				</td>
+			</tr>
+		</table>
+	</main>
 </body>
 
 </html>

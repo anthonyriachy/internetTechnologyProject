@@ -1,12 +1,7 @@
-function displaySideBar(){
-    document.getElementsByClassName('side-bar').style.display= block
-    document.getElementById('button').style.color=red
-}
-
 function openSideBar() {
-    document.getElementById("side-bar").style.display= "flex";
+    document.getElementById("side-bar").style.width = "250px";
   }
 
   function closeSideBar() {
-    document.getElementById("side-bar").style.display= "none";
+    document.getElementById("side-bar").style.width= "0";
   }
