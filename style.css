@@ -173,3 +173,191 @@ table {
 .skills {
 	margin-top: 100px;
 }
+
+/* cv css */
+.cv-body{ 	
+    margin:0;
+    font-family: sans-serif;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    gap: 1em;
+    margin:  1em;
+}
+.left{
+    width: 40%;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+    overflow: hidden;
+}
+
+.name img{
+    width: 100%;
+}
+
+.right{
+    width: 70%;
+}
+
+.name{
+    position: relative;
+}
+.name-h1{
+	text-align: center;
+	font-size: 2em;
+}
+
+
+
+.contact{
+    padding: .6em 1em;
+    
+}
+
+
+.contact i{
+    color:#009688;
+    margin-right: .5em;
+    width: 100%;
+    display: inline;
+}
+
+.contact a{
+    font-size: .9em;
+}
+
+.skills{
+    padding: 0 1em;
+}
+
+.bar{
+    width:100% ;
+    
+    height: 1em;
+    background-color: #f1f1f1;
+    border-radius: 18px;
+    text-align: center;
+    color:black;
+}
+
+.barr{
+    width:100% ;
+    height: 2em;
+    background-color: #f1f1f1;
+    border-radius: 18px;
+    color:black;
+}
+
+
+.progress-c{
+    width: 80%;
+    background-color: #009688;
+    border-radius:18px ;
+}
+
+.progress-html{
+    width:90%;
+    background-color:#009688;
+    border-radius:18px
+}
+
+.progress-js{
+    width: 40%;
+    background-color:#009688;
+    border-radius:18px;
+}
+
+.progress-react-native{
+    width: 50%;
+    background-color:#009688;
+    border-radius:18px;
+}
+
+.progress-MERN{
+    width: 40%;
+    background-color:#009688;
+    border-radius:18px;
+}
+.progress-ASP{
+    width: 10%;
+    background-color:#009688;
+    border-radius:18px;
+}
+.lang{
+    padding:1em 1em;
+}
+
+.progress-eng{
+    width: 90%;
+    background-color: #009688;
+    border-radius:18px;
+    height: 100%;
+}
+
+.progress-ar{
+    width: 100%;
+    background-color:#009688;
+    border-radius:18px;
+    height: 100%;
+}
+
+.progress-fr{
+    width: 30%;
+    border-radius:18px;
+    height: 100%;
+    background-color:#009688;
+}
+
+.work-exper{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+    padding: 1em;   
+}
+
+.section-1 p{
+    line-height: 1.5em;
+}
+
+.education{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.education i{
+    color:#009688;
+    margin-right: .5em;
+}
+
+.education p{
+	padding-left:1em
+}
+.right h1{
+    font-size:1.5em;
+}
+
+.time{
+    color: #009688;
+    margin:2em 0;
+}
+h1,h3{
+    color:#757575
+}
+
+@media screen and (max-width:426px) {
+    .main{
+        flex-direction: column;
+        margin:1em auto;
+    }
+
+
+    .left{
+        width: 100%;
+    }
+
+    .right{
+        width: 100%;
+    }
+}
