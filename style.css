@@ -3,7 +3,39 @@
 * {
 	box-sizing: border-box;
 }
+/* index css */
+.index-main{
+	display: flex;
+	
+}
+.index-main section{
+	margin: 1em;
+	padding: .5em;
+	/* border: 1px solid black; */
+	border-radius: 1em ;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	height: 70vh;
+	width: 31%;
 
+}
+.research{
+	opacity: 0	;
+	
+}
+
+.index-main section:hover ,.index-main section:hover .research , .index-main section:hover h2 {
+	transform: rotateY(180deg);
+	opacity : 1;
+	cursor: pointer;
+}   
+
+.index-main section ,.research, .index-main section:hover h2  {
+	transition: transform 2s, opacity 4s;
+}
+
+.research{
+	height:54vh ;
+}
 .research-body {
 	font-family: 'Roboto', sans-serif;
 	margin:40px;
