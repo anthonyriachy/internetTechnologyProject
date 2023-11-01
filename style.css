@@ -7,7 +7,11 @@
 .index-main{
 	display: flex;
 	
+	
 }
+
+
+
 .index-main section{
 	margin: 1em;
 	padding: .5em;
@@ -18,6 +22,8 @@
 	width: 31%;
 
 }
+
+
 .research{
 	opacity: 0	;
 	
@@ -392,4 +398,46 @@ h1,h3{
     .right{
         width: 100%;
     }
+}
+
+
+
+/* image gallery */
+.media-body{
+	margin: 0;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col-1,.col-2{
+    width:100%;
+}
+
+.col-1 img, .col-2 img{
+    max-width:100%;
+    
+}
+
+.gallery img {
+    display: block;
+}
+
+@media  screen and (max-width:600px) {
+    .gallery{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+	.index-main{
+		flex-direction: column;
+	}
+	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111 */
+	.index-main section{
+		width:100%
+	}
 }
