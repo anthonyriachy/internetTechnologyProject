@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
 	box-sizing: border-box;
 }
@@ -46,12 +46,6 @@
 	font-family: 'Roboto', sans-serif;
 	margin:40px;
 }
-
-.mainPage-body{
-	font-family: 'Roboto', sans-serif;
-	margin:0;
-}
-
 .schedule-body{
 	font-family: 'Roboto', sans-serif;
 	height: auto;
@@ -80,40 +74,67 @@ table {
 }
 
 table {
-
 	width: 100%;
 }
+.mainPage{
+	font-family: "Open Sans", sans-serif;
+	margin:0;
+	padding:0;
+	background-image: url('photos/backgroundLaptop.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.mainPage nav{
+	display: flex;
+	align-items: center;
+	height: 7em;
+	border-bottom: 0.5px solid #f1f1f1;
+  }
+  .mainPage nav h2{
+	margin-right:5em;
+	margin-left:2em;
+	color:#f1f1f1;
+  }
+  .mainPage ul{
+	display: flex;
+	align-items: center;
+	height: 30px;
+  }
 
-.nav-bar {
-	display: flex;
-	align-items: center;
-	height: 65px;
-	margin-top: 0px;
-	background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  .mainPage li{
+	margin:2em;
+	list-style-type: none;
   }
-  
-  .nav-bar div {
-	display: flex;
-	align-items: center;
-	width: 25%;
-	text-align: center;
-  }
-  
-  .nav-bar div a {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%; /* Set the anchor tag width to 100% */
-	text-decoration: none;
-	color: black;
-	height: 65px;
-  }
-  
-  .nav-bar div:hover {
-	background-color: red;
-	transition: 0.3s;
-  }
-  
+
+ li a{
+    position: relative;
+    text-decoration: none;
+	color:#f1f1f1;
+    letter-spacing: 0.5px;
+}
+ li a:after{
+    content: "";
+    position: absolute;
+    background-color: #f1f1f1;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+li a:hover{
+    color: #ffffff;
+}
+li a:hover:after{
+    width: 100%;
+}
+.mainPage h1{
+	position:relative;
+	left:10.5em;
+	color:#f1f1f1;
+	font-size:100px;
+	width:4em;
+}
 #side-bar {
 	display: flex;
 	overflow-x: hidden;
