@@ -109,7 +109,7 @@ table {
  li a{
     position: relative;
     text-decoration: none;
-	color:#f1f1f1;
+	color:#e0dede;
     letter-spacing: 0.5px;
 }
  li a:after{
@@ -134,6 +134,7 @@ li a:hover:after{
 	color:#f1f1f1;
 	font-size:100px;
 	width:4em;
+	text-align: center;
 }
 #side-bar {
 	display: flex;
