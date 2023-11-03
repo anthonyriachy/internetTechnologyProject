@@ -421,7 +421,66 @@ h1,h3{
         width: 100%;
     }
 }
+/*arabic page*/
+#secondary-content{
+    font-family: Arial, Helvetica, sans-serif; 
+}
+.secondary-content-article{
+    height:30em;
+	width:40em;
+    padding:1em;
+}
+.secondary-content-text li{
+	margin:10px;
+}
+.arabic-page{
+	background-image: url("https://th.bing.com/th/id/R.fc3855d78ce2ce1962f4bc26b189137e?rik=uE4PMMkPXcipnw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f10%2fArabic-Wallpaper-HD.jpg&ehk=azRvLZvttE4ylFqqEA%2fVPh0ZJr%2bZHHd2N%2bfaWQ9x%2bRE%3d&risl=&pid=ImgRaw&r=0");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.secondary-content-text{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:10px;
+    width:25em;
+	height:30em;
+    background-color: #f8faf9;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.secondary-content-article p{
+    text-align:center;
+    width:13em;
+    color:#868686;
+    margin-top:10px;
+}
 
+.secondary-content-article h2{
+    text-align: center;
+	margin-top:-2em;
+}
+.secondary-content-article hr{
+    display:block;
+    border:none;
+    background-color:#489fe6;
+    margin-top:1em;
+    height:3px;
+    width:6em;
+}
+.secondary-content-article a{
+    margin-top:18px;
+    color:#489fe6;
+    border:3px solid #489fe6;
+    padding:5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.secondary-content-container{
+    display:flex;
+    justify-content:center;
+	width:100%;
+}
 
 
 /* image gallery */
