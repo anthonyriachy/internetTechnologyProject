@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+
+    <title>Document</title>
+</head>
+<body>
+    <section class="startQuiz">
+        <h2 class="quiz-h2">QUIZ TITLE</h2>
+        <div>
+            <input type="button" id="startQuizButton" value="start quiz" onclick="displayQuestions()">
+            <span>time: 20mins</span>
+        </div>
+    </section>
+    <section class="questions">
+        <header style="color: black;" class="header">
+            <p class="header-h" >QUIZ NAME <p>
+            <p class="header-p"><span>Time Left: <span id="time"></span></span></p>
+        </header>
+        
+        <h2 id="question-title"></h2>
+
+        <div id="select-list">
+
+        </div>
+
+        <button id="quiz-submit-button">submit</button>
+
+        <div id="questions-left">
+            <p id="questions-left-p"></p>
+            <div id="question-left-line">
+                
+            </div>
+        </div>
+        
+        <button onclick="displayQuestions()" class="next-button">next</button>
+    </section>
+
+    <script>
+        questions=[
+            {
+                title:"which one is used to style websites",
+                answers:["js","css","html","all of the above"],
+                correct:"css"
+            },
+            {
+                title:"which one is used to structure websites",
+                answers:["css","js","html","all of the above"],
+                correct:"html"
+            },
+            {
+                title:"which one is used to make the websites functional",
+                answers:["css","js","html","all of the above"],
+                correct:"js"
+            },
+            {
+                title:"which HTML tag is used to create a line (write opening and closing tags if necessary)",
+                correct:["<hr>","<hr/>","<hr></hr>"],
+                
+            }
+        ]
+
+        var time=1
+        let  dis=0
+        function timer(){
+            if(time<0){
+                displayQuestions();
+            }
+            time+=1
+            dis=20-time
+            document.getElementById("time").innerText=dis
+        }
+
+        let index=0; //this is used to locate which question we are in.
+        var counter=0
+        function displayQuestions(){
+            time=0;
+            let myvar=0;
+            const main=document.querySelector(".startQuiz");
+            if(main.style.display!="none"){
+                main.style.display='none';
+                document.querySelector(".questions").style.display='block'
+            }
+
+            document.getElementById("question-title").innerHTML=""
+            document.getElementById("select-list").innerHTML=""
+
+            myvar=setInterval(timer,1400)
+            if(index<questions.length){
+                const title=questions[index].title
+                const correct=questions[index].correct;
+                
+                if(questions[index].answers){ //if the questions are radio button
+                    const answers=questions[index].answers
+                  
+                    for (e of answers){
+                        document.getElementById("select-list").innerHTML+=`<div id='option${counter}' onclick='validateAnswer("option${counter}","${correct }",true)' class="question">`+e+" <i class='fa-solid fa-check'></i></div>"    
+                        counter+=1;
+                    }
+
+                }else{ //question are text input
+                    document.getElementById("select-list").innerHTML+=`<input type='text' id="question-input">`;
+                    document.getElementById("quiz-submit-button").style.display="block";
+                    document.getElementById("quiz-submit-button").onclick=()=>validateAnswer(0,questions[index].correct[0],false)
+                }
+
+                index=index+1;
+                document.getElementById("question-title").innerText=title+": "
+                counter=0
+            }else{
+                document.getElementById("question-title").innerText="your score is: {}"
+                clearInterval(myvar)
+            }
+            document.getElementById("questions-left-p").innerText=`question ${index} of ${questions.length}`
+            const width=(index/questions.length)*100+"%"
+            document.getElementById("question-left-line").style.width=width
+
+            
+        }
+
+        // function selectedAnswer(id){
+        //     return document.getElementById(id).value
+            
+        // }
+
+        function validateAnswer(id,ans,isQCM=false){ // id is the chosen answer
+            console.log("id: ",id);
+            console.log("ans: ",ans);
+            
+
+            if(isQCM){ //is qcm
+
+                const value=document.getElementById(id).innerText
+
+                const items=document.querySelectorAll(".question")
+                let index=0;
+                while(items[index].innerText!=ans){
+                    index++;
+                }
+
+                if(value==ans){
+                    console.log("yessss ") ;
+                    document.getElementById(id).style.backgroundColor="green"
+                }else{
+                    let pos=document.getElementById(items[index].id);
+                    console.log(pos)
+                    pos.style.backgroundColor="green"
+                    document.getElementById(id).style.backgroundColor="red"
+                }
+
+            }else{      //not qcm
+                const inputans=document.getElementById("question-input").value;
+                document.getElementById("quiz-submit-button").style.display="none";
+                console.log("ans is "+inputans);
+                
+            }
+        }
+        
+    </script>
+
+</body>
+</html>

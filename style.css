@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
 	box-sizing: border-box;
+    
 }
 /* index css */
 .index-main{
@@ -522,3 +523,109 @@ h1,h3{
 		width:100%
 	}
 }
+
+/* ////////////quiz css////////////////// */
+.startQuiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid black;
+    width:fit-content;
+    padding:1em;
+    border-radius:5px;
+    margin:40vh auto 0 auto;
+    box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.75);
+
+}
+#startQuizButton{
+    border-radius: 5px;
+    padding:.5em 1em;
+    margin-right:.5em;  
+    background-color:lightgreen;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 2em;
+    padding-bottom:.5em;
+    border-bottom: 1px solid black;
+    
+    
+}
+.header-h{
+    display: inline-block;
+    font-size: 1.5em;
+    width: fit-content;
+    margin: 0;
+    
+}
+.header-p{
+    margin:0;
+}
+.questions{
+    border:1px solid black;
+    padding:1em;
+    width: 50%;
+    margin:auto;
+    display: none;
+    border-radius:10px;
+    height: 95vh;
+    position: relative;
+}
+
+#question-title{
+    padding-left:.25em;
+}
+#select-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+}
+.question{
+    border:1px solid black;
+    padding: .5em 1em;
+    margin:.5em
+    
+}
+#question-left-line{
+    height: 2px;
+    background-color: black;
+    width: 30%;
+}
+
+
+.next-button{
+    position: absolute;
+    bottom: -18px;
+    right: 1.5em;
+    padding:.5em 1.5em;
+    border-radius:5px;
+    background-color:white;
+}
+#quiz-submit-button{
+    display: none;
+}
+#time{
+    background-color: black;
+    color: white;
+    padding: .5em .75em;
+    margin-left:.5em;
+    border-radius:5px
+
+}
+
+
+
+@media  screen and (max-width:808px) {
+    .questions{
+        width: 90%;
+    }
+}
+
+/* /////////end of quiz css////////////// */
