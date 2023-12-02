@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
     <title>media</title>
 </head>
 <body class="media-body">
+    
+	<span class="sideBar-open-button" onclick="openSideBar()">&#9776; </span>
 
-    <video width="100%"  style="margin-bottom: 10vh;" autoplay controls>
+    <nav id="side-bar">
+        <div class="sideBar-close-button">
+            <span onclick="closeSideBar()">&times;</span>
+        </div>
+        <div class="side-bar-elements">
+            <a href="index.html">My research </a>
+        </div>
+        <div class="side-bar-elements">
+            <a href="cv.html">My CV</a>
+        </div>
+        <div class="side-bar-elements">
+            <a href="schedule.html">My Schedule</a>
+        </div>
+        <div class="side-bar-elements">
+            <a href="arabic.html">arabic page</a>
+        </div>
+    </nav>
+
+	
+    <h1 style="text-align:center">Art Gallery</h1>
+    <section style="width:90%">
+        <h2>explore our nature</h2>
+        <video style=" width:100%;"  controls autoplay>
+            
         <source src="photos/Nature-Beautiful-short-video-720p-HD-(4).mp4" type="video/mp4">
-    </video>
+        </video>
+    </section>
 
 
     <audio width="100%" controls >
@@ -20,7 +47,7 @@
 
     
         <div class="gallery">
-            <h1>art gallery</h1>
+            
             <div class="col-1">
                 <img src="photos/streetart.jpg" alt="" class="img">
                 <img src="photos/streetart2.jpg" alt="">

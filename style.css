@@ -2,13 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
 	box-sizing: border-box;
-    
+
 }
-/* index css */
+
+
+
+/*////////////////////// index css //////////////////////*/
 .index-main{
 	display: flex;
-	
-	
+
+
 }
 
 
@@ -21,23 +24,34 @@
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 	height: 70vh;
 	width: 31%;
-
+    position: relative;
 }
 
+.index-main-see-more{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size:larger;   
+    color:grey
+}
 
 .research{
 	opacity: 0	;
-	
+
 }
 
 .index-main section:hover ,.index-main section:hover .research , .index-main section:hover h2 {
 	transform: rotateY(180deg);
 	opacity : 1;
 	cursor: pointer;
-}   
+}
 
+.index-main section:hover .index-main-see-more{
+    display: none;
+}
 .index-main section ,.research, .index-main section:hover h2  {
-	transition: transform 2s, opacity 4s;
+	transition: transform 1s, opacity .8s;
 }
 
 .research{
@@ -47,6 +61,35 @@
 	font-family: 'Roboto', sans-serif;
 	margin:40px;
 }
+
+
+
+
+@media screen and (max-width: 1340px) {
+    .index-main {
+        flex-direction: column;
+        align-items: center;
+    }   
+    .index-main section {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .index-main {
+        flex-direction: column;
+        align-items: center;
+    }   
+    .index-main section {
+        width: 80%;
+     
+    }
+}
+/*/////////////////////end css for index//////////////////  */
+
+
+
+
 .schedule-body{
 	font-family: 'Roboto', sans-serif;
 	height: auto;
@@ -148,6 +191,7 @@ li a:hover:after{
 	position: absolute;
 	top: 0;
 	bottom: 0;
+    left:0;
 	z-index: 1;
 	background-color: grey;
 	list-style-type: none;
@@ -156,7 +200,7 @@ li a:hover:after{
 	border: 1px solid black;
 	transition: 0.4s;
 	width:0;
-	
+
 }
 
 .side-bar-elements {
@@ -187,6 +231,9 @@ li a:hover:after{
 	cursor:pointer;
 	font-size: 40px;
 	margin-left:4px;
+    position: absolute;
+    top:10px;
+    left:10px;
 }
 .research {
 	margin-bottom: 30px;
@@ -236,7 +283,7 @@ li a:hover:after{
 }
 
 /* cv css */
-.cv-body{ 	
+.cv-body{
     margin:0;
     font-family: sans-serif;
 }
@@ -275,7 +322,7 @@ li a:hover:after{
 
 .contact{
     padding: .6em 1em;
-    
+
 }
 
 
@@ -296,7 +343,7 @@ li a:hover:after{
 
 .bar{
     width:100% ;
-    
+
     height: 1em;
     background-color: #f1f1f1;
     border-radius: 18px;
@@ -374,7 +421,7 @@ li a:hover:after{
 
 .work-exper{
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
-    padding: 1em;   
+    padding: 1em;
 }
 
 .section-1 p{
@@ -407,7 +454,7 @@ h1,h3{
     color:#757575
 }
 
-@media screen and (max-width:426px) {
+@media screen and (max-width:620px) {
     .main{
         flex-direction: column;
         margin:1em auto;
@@ -424,7 +471,7 @@ h1,h3{
 }
 /*arabic page*/
 #secondary-content{
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 .secondary-content-article{
     height:30em;
@@ -487,6 +534,9 @@ h1,h3{
 /* image gallery */
 .media-body{
 	margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 .gallery{
@@ -501,7 +551,7 @@ h1,h3{
 
 .col-1 img, .col-2 img{
     max-width:100%;
-    
+
 }
 
 .gallery img {
@@ -539,10 +589,11 @@ h1,h3{
 -moz-box-shadow: 0px 0px 14px 3px rgba(0,0,0,0.75);
 
 }
+
 #startQuizButton{
     border-radius: 5px;
     padding:.5em 1em;
-    margin-right:.5em;  
+    margin-right:.5em;
     background-color:lightgreen;
 }
 
@@ -554,15 +605,15 @@ h1,h3{
     margin-bottom: 2em;
     padding-bottom:.5em;
     border-bottom: 1px solid black;
-    
-    
+
+
 }
 .header-h{
     display: inline-block;
     font-size: 1.5em;
     width: fit-content;
     margin: 0;
-    
+
 }
 .header-p{
     margin:0;
@@ -585,13 +636,13 @@ h1,h3{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 50vh;
+    height: 40vh;
 }
 .question{
     border:1px solid black;
     padding: .5em 1em;
     margin:.5em
-    
+
 }
 #question-left-line{
     height: 2px;
@@ -624,8 +675,9 @@ h1,h3{
 
 @media  screen and (max-width:808px) {
     .questions{
-        width: 90%;
+        width:100%;
     }
 }
+
 
 /* /////////end of quiz css////////////// */

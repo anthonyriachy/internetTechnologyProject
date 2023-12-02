@@ -19,7 +19,7 @@
     <section class="questions">
         <header style="color: black;" class="header">
             <p class="header-h" >QUIZ NAME <p>
-            <p class="header-p"><span>Time Left: <span id="time"></span></span></p>
+            <p class="header-p">Time Left: <span id="time"></span></p>
         </header>
         
         <h2 id="question-title"></h2>
@@ -41,6 +41,7 @@
     </section>
 
     <script>
+        correctAnswers=[]
         questions=[
             {
                 title:"which one is used to style websites",
@@ -60,6 +61,11 @@
             {
                 title:"which HTML tag is used to create a line (write opening and closing tags if necessary)",
                 correct:["<hr>","<hr/>","<hr></hr>"],
+                
+            },
+            {
+                title:"which css property is used to set the text color of an element",
+                correct:["color","color:"],
                 
             }
         ]
@@ -105,18 +111,29 @@
                 }else{ //question are text input
                     document.getElementById("select-list").innerHTML+=`<input type='text' id="question-input">`;
                     document.getElementById("quiz-submit-button").style.display="block";
-                    document.getElementById("quiz-submit-button").onclick=()=>validateAnswer(0,questions[index].correct[0],false)
+                    
+                    
+                    document.getElementById("quiz-submit-button").onclick=()=>validateAnswer(0,index,false)
                 }
 
                 index=index+1;
                 document.getElementById("question-title").innerText=title+": "
                 counter=0
-            }else{
-                document.getElementById("question-title").innerText="your score is: {}"
+            }else{ //no more question left
+                let points=0;
+                for (const e of correctAnswers){
+                    if(e){
+                        points++;
+                    }
+                }
+                const score=points/(correctAnswers.length-1) *100    ;
+
+                document.getElementById("question-title").innerText=`your score is: ${score}`;
+
                 clearInterval(myvar)
             }
-            document.getElementById("questions-left-p").innerText=`question ${index} of ${questions.length}`
-            const width=(index/questions.length)*100+"%"
+            document.getElementById("questions-left-p").innerText=`question ${index} of ${questions.length}` //display questions left
+            const width=(index/questions.length)*100+"%"                                                     //width of the progress bar
             document.getElementById("question-left-line").style.width=width
 
             
@@ -127,7 +144,7 @@
             
         // }
 
-        function validateAnswer(id,ans,isQCM=false){ // id is the chosen answer
+        function validateAnswer(id,ans,isQCM){ // id is the chosen answer
             console.log("id: ",id);
             console.log("ans: ",ans);
             
@@ -142,21 +159,33 @@
                     index++;
                 }
 
-                if(value==ans){
-                    console.log("yessss ") ;
+                if(value==ans){ //correct answer
+                    correctAnswers.push(true)
+
                     document.getElementById(id).style.backgroundColor="green"
-                }else{
+
+                }else{ //false answer
+                    correctAnswers.push(false)
+
+                    //highlight the correct green one and color the selected wrong one redd
                     let pos=document.getElementById(items[index].id);
-                    console.log(pos)
                     pos.style.backgroundColor="green"
                     document.getElementById(id).style.backgroundColor="red"
                 }
 
             }else{      //not qcm
-                const inputans=document.getElementById("question-input").value;
-                document.getElementById("quiz-submit-button").style.display="none";
-                console.log("ans is "+inputans);
+                //here ans is the index
+
+                const inputans=document.getElementById("question-input").value; //save the ans that the user wrote
+
+                document.getElementById("quiz-submit-button").style.display="none"; //remove the submit button
                 
+                if(questions[index-1].correct.includes(inputans)){ //correct answer
+                    correctAnswers.push(true)
+                    console.log("yessss")
+                }else{
+                    correctAnswers.push(false)
+                }
             }
         }
         
