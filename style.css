@@ -681,3 +681,71 @@ h1,h3{
 
 
 /* /////////end of quiz css////////////// */
+
+/* ////////////////////////contact uss ///////////////////////////*/
+.contact-us-body{
+    margin:0;
+    background-color: lightblue;
+}
+.contact-us-form{
+    width: 80%;
+    margin:auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    padding-top:20vh;
+    
+}
+
+
+.contact-us-form input,.contact-us-form textarea{
+    border:none
+
+}
+
+.contact-us-form textarea{
+    height:10vh
+}
+
+#form-submit-button{
+    align-self:flex-end ;
+}
+
+#messg{
+    width: 240px;
+}
+.form-main{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.emailAndPhone{
+    margin-left:5px;
+}
+.emailAndPhone div{
+    padding:2px;
+}
+.name div{
+    padding: 2px;
+}
+
+#form-submit-button{
+    border-radius:5px;
+    padding: 1em 2em;
+
+}
+
+#form-submit-button:hover{
+    background-color: white;
+}
+@media screen and (max-width:370px){
+    .form-main{
+        flex-direction:column
+    }
+    .emailAndPhone{
+        margin-left:0
+    }
+}
+/* ////////////////////////end of contact uss ///////////////////////////*/

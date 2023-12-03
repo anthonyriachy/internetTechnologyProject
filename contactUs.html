@@ -7,21 +7,91 @@
     <script src="main.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="contact-us-body">
     
-    <form action="" onsubmit="validateForm()">
-        <label for="email">your email:</label>
-        <input type="text" name="email" id="email">
+    <form action="" class="contact-us-form">
+        <section class="form-main">
+            <section class="name" style="margin-right:5px">
+                <div>
+                    <label for="fname">First Name <span id="fnameSpan">*</span></label>
+                    <br>
+                    <input type="text" name="fname" id="fname">
+                </div>
+                <div>
+                    <label for="lname">Last Name <span id="lnameSpan">*</span></label>
+                    <br>
+                    <input type="text" name="lname" id="lname">
+                </div>
+            </section>
+            <section class="emailAndPhone" >
+                <div>
+                    <label for="email">Email Address <span id="emailSpan">*</span></label>
+                    <br>    
+                    <input type="text" name="email" id="email">
+                </div>
+                <div>
+                    <label for="pnumber">Phone Number <span id="pnumberSpan">*</span></label>
+                    <br>
+                    <input type="text" id="pnumber" name="pnumber">
+                </div>
+            </section>
+        </section>
         <br><br>
-        <label for="messg">your message</label>
-        <textarea></textarea>
+        <section>
+            <label for="messg" class="messg-label">your message:</label>
+            <br>
+            <textarea name="messg" id="messg"></textarea>
+        </section>
 <br><br>    
 
-        <input type="submit">
+        <input type="button" value="submit" id="form-submit-button" onclick="validateForm()">
     </form>
 
     <script>
         function validateForm(){
+            if(document.getElementById("fname").value==""){
+                document.getElementById("fnameSpan").style.color="red"
+            }else{
+                document.getElementById("fnameSpan").style.color="black"
+            }
+            
+            
+            if(document.getElementById("lname").value==""){
+                document.getElementById("lnameSpan").style.color="red"
+            }else{
+                document.getElementById("lnameSpan").style.color="black"
+            }
+
+            if(document.getElementById("email").value==""){
+                document.getElementById("emailSpan").style.color="red"
+            }else{
+                document.getElementById("emailSpan").style.color="black"
+                const email=document.getElementById("email").value;
+                if(!email.includes("@") || !email.includes(".com")){ //check if email is wrong
+                    document.getElementById("emailSpan").style.color="red"
+                    document.getElementById("emailSpan").innerText="(wrong email format)"
+                }else{
+                    document.getElementById("emailSpan").innerText="*"
+                }
+            }
+
+            if(document.getElementById("pnumber").value==""){
+                document.getElementById("pnumberSpan").style.color="red"
+            }else{
+                const number=document.getElementById("pnumber").value
+                if(isNaN(number) || number.length <8){
+                    document.getElementById("pnumberSpan").style.color="red"
+                    document.getElementById("pnumberSpan").innerText="(phone number should be a number and of 7 digits)"
+                }else{
+                    document.getElementById("pnumberSpan").innerText="*"
+                    document.getElementById("pnumberSpan").style.color='black'
+                }
+
+
+                
+            }
+
+
 
         }
     </script>
