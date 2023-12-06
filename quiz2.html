@@ -41,7 +41,8 @@
     </section>
 
     <script>
-        correctAnswers=[]
+        let correctAnswers=[]
+        let usersAnswers=[]
         questions=[
             {
                 title:"which one is used to style websites",
@@ -139,10 +140,7 @@
             
         }
 
-        // function selectedAnswer(id){
-        //     return document.getElementById(id).value
-            
-        // }
+       
 
         function validateAnswer(id,ans,isQCM){ // id is the chosen answer
             console.log("id: ",id);

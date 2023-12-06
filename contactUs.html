@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
     <title>Document</title>
 </head>
 <body class="contact-us-body">
-    
-    <form action="" class="contact-us-form">
+
+    <form action="contactusAction.php" method="get" class="contact-us-form" id="myForm">
+        <div class="contact-us-bg"></div>
         <section class="form-main">
             <section class="name" style="margin-right:5px">
                 <div>
@@ -17,18 +18,21 @@
                     <br>
                     <input type="text" name="fname" id="fname">
                 </div>
+                <br>
                 <div>
                     <label for="lname">Last Name <span id="lnameSpan">*</span></label>
                     <br>
                     <input type="text" name="lname" id="lname">
                 </div>
             </section>
+            <br>
             <section class="emailAndPhone" >
                 <div>
                     <label for="email">Email Address <span id="emailSpan">*</span></label>
                     <br>    
                     <input type="text" name="email" id="email">
                 </div>
+                <br>
                 <div>
                     <label for="pnumber">Phone Number <span id="pnumberSpan">*</span></label>
                     <br>
@@ -40,17 +44,27 @@
         <section>
             <label for="messg" class="messg-label">your message:</label>
             <br>
-            <textarea name="messg" id="messg"></textarea>
+            <textarea name="messg" id="messg" ></textarea>
         </section>
 <br><br>    
 
-        <input type="button" value="submit" id="form-submit-button" onclick="validateForm()">
+        <input type="submit" value="submit" id="form-submit-button" onclick="validateForm()">
     </form>
 
     <script>
+        document.getElementById("myForm").addEventListener("submit",function(event){
+            event.preventDefault();
+            if(validateForm()){
+                this.submit();
+            }
+        })
+
+
         function validateForm(){
+            let cond1=true ,cond2=true,cond3=true,cond4=true;
             if(document.getElementById("fname").value==""){
                 document.getElementById("fnameSpan").style.color="red"
+                cond1=false
             }else{
                 document.getElementById("fnameSpan").style.color="black"
             }
@@ -58,18 +72,21 @@
             
             if(document.getElementById("lname").value==""){
                 document.getElementById("lnameSpan").style.color="red"
+                cond2=false
             }else{
                 document.getElementById("lnameSpan").style.color="black"
             }
 
             if(document.getElementById("email").value==""){
                 document.getElementById("emailSpan").style.color="red"
+                cond3=false
             }else{
                 document.getElementById("emailSpan").style.color="black"
                 const email=document.getElementById("email").value;
                 if(!email.includes("@") || !email.includes(".com")){ //check if email is wrong
                     document.getElementById("emailSpan").style.color="red"
                     document.getElementById("emailSpan").innerText="(wrong email format)"
+                    cond3=false;
                 }else{
                     document.getElementById("emailSpan").innerText="*"
                 }
@@ -77,11 +94,13 @@
 
             if(document.getElementById("pnumber").value==""){
                 document.getElementById("pnumberSpan").style.color="red"
+                cond4=false
             }else{
                 const number=document.getElementById("pnumber").value
                 if(isNaN(number) || number.length <8){
                     document.getElementById("pnumberSpan").style.color="red"
                     document.getElementById("pnumberSpan").innerText="(phone number should be a number and of 7 digits)"
+                    cond4=false
                 }else{
                     document.getElementById("pnumberSpan").innerText="*"
                     document.getElementById("pnumberSpan").style.color='black'
@@ -90,7 +109,7 @@
 
                 
             }
-
+            return (cond1*cond2*cond3*cond4);
 
 
         }
