@@ -25,7 +25,7 @@
         <h2 id="question-title"></h2>
 
         <div id="select-list">
-
+         
         </div>
 
         <button id="quiz-submit-button">submit</button>
@@ -70,54 +70,72 @@
             }
         ]
 
-        var time=1
-        let  dis=0
+        var time=60
+
+
+        var myvar=0;//used for timer
+
         function timer(){
-            if(time<0){
+
+            document.getElementById("time").innerText=time
+
+            if(time<=0){
+                time=0;
+                clearInterval(myvar)
                 displayQuestions();
+                return
             }
-            time+=1
-            dis=20-time
-            document.getElementById("time").innerText=dis
+
+            time-=1
+            
+
+            
         }
 
         let index=0; //this is used to locate which question we are in.
         var counter=0
+        
         function displayQuestions(){
-            time=0;
-            let myvar=0;
+            
+            
             const main=document.querySelector(".startQuiz");
             if(main.style.display!="none"){
                 main.style.display='none';
                 document.querySelector(".questions").style.display='block'
             }
 
+            time=60
+            clearInterval(myvar);
+
             document.getElementById("question-title").innerHTML=""
             document.getElementById("select-list").innerHTML=""
 
-            myvar=setInterval(timer,1400)
-            if(index<questions.length){
+            
+            myvar=setInterval(timer,1000)
+
+            if(index<questions.length){ //iff there is more questions
                 const title=questions[index].title
                 const correct=questions[index].correct;
                 
-                if(questions[index].answers){ //if the questions are radio button
+                if(questions[index].answers){ //if the questions are QCM
                     const answers=questions[index].answers
                   
                     for (e of answers){
-                        document.getElementById("select-list").innerHTML+=`<div id='option${counter}' onclick='validateAnswer("option${counter}","${correct }",true)' class="question">`+e+" <i class='fa-solid fa-check'></i></div>"    
+                        document.getElementById("select-list").innerHTML+=`<div id='option${counter}' onclick='validateAnswer("option${counter}","${correct }",true)' class="question">`+"<div class='question-content'>"+e+"</div>"+" <i class='fa-solid fa-check'></i></div>"    
                         counter+=1;
                     }
 
                 }else{ //question are text input
                     document.getElementById("select-list").innerHTML+=`<input type='text' id="question-input">`;
-                    document.getElementById("quiz-submit-button").style.display="block";
+
+                    document.querySelector(".next-button").innerText="Submit"
+                    document.querySelector(".next-button").onclick=()=>validateAnswer(0,index,false)
                     
                     
-                    document.getElementById("quiz-submit-button").onclick=()=>validateAnswer(0,index,false)
                 }
+                document.getElementById("question-title").innerText=title+": "
 
                 index=index+1;
-                document.getElementById("question-title").innerText=title+": "
                 counter=0
             }else{ //no more question left
                 let points=0;
@@ -169,8 +187,8 @@
 
                     //highlight the correct green one and color the selected wrong one redd
                     let pos=document.getElementById(items[index].id);
-                    pos.style.backgroundColor="green"
-                    document.getElementById(id).style.backgroundColor="red"
+                    pos.style.backgroundColor="lightgreen"
+                    document.getElementById(id).style.backgroundColor="#e15656"
                 }
 
             }else{      //not qcm
@@ -178,12 +196,14 @@
 
                 const inputans=document.getElementById("question-input").value; //save the ans that the user wrote
 
-                document.getElementById("quiz-submit-button").style.display="none"; //remove the submit button
-                
-                if(questions[index-1].correct.includes(inputans)){ //correct answer
-                    correctAnswers.push(true)
-                    console.log("yessss")
+                document.querySelector(".next-button").innerText="Next" //replace the submit button by the next button
+                document.querySelector(".next-button").onclick=()=>displayQuestions()
+                if(questions[index-1].correct.includes(inputans)){ //correct answer                    
+                    correctAnswers.push(true);
+                    document.getElementById("question-input").style.backgroundColor="lightgreen";
                 }else{
+                    document.getElementById("question-input").value="correct answer is: "+questions[index-1].correct[0];
+                    document.getElementById("question-input").style.backgroundColor="red";
                     correctAnswers.push(false)
                 }
             }

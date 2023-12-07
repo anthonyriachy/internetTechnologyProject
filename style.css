@@ -158,6 +158,8 @@ table {
 table {
 	width: 100%;
 }
+
+/* ///////////////main page /////////////////////*/
 .mainPage{
 	font-family: "Open Sans", sans-serif;
 	margin:0;
@@ -165,22 +167,30 @@ table {
 	background-image: url('photos/backgroundLaptop.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+    background-position: fixed;
+    height: 100vh;
 }
 .mainPage nav{
 	display: flex;
 	align-items: center;
-	height: 7em;
+    justify-content: space-evenly;
+
 	border-bottom: 0.5px solid #f1f1f1;
-  }
+}
+.mainPageNav a{
+    color: white;
+    text-decoration: none;
+}
   .mainPage nav h2{
-	margin-right:5em;
-	margin-left:2em;
+	
+	margin-left:2em; 
+    justify-self: flex-start;
 	color:#f1f1f1;
   }
   .mainPage ul{
 	display: flex;
 	align-items: center;
-	height: 30px;
+	
   }
 
   .mainPage li{
@@ -188,13 +198,15 @@ table {
 	list-style-type: none;
   }
 
+
+
  li a{
     position: relative;
     text-decoration: none;
 	color:#e0dede;
     letter-spacing: 0.5px;
 }
- li a:after{
+ li a::after{
     content: "";
     position: absolute;
     background-color: #f1f1f1;
@@ -210,14 +222,48 @@ li a:hover{
 li a:hover:after{
     width: 100%;
 }
+
 .mainPage h1{
 	position:relative;
-	left:10.5em;
+	left:27vw;
+    top:25vh;
 	color:#f1f1f1;
-	font-size:100px;
-	width:4em;
+	
+	
 	text-align: center;
 }
+
+
+
+@media screen and (max-width: 768px ) {
+    .mainPage nav{
+        flex-direction: column;
+    }
+    .mainPage nav h2{
+        margin:0;
+        margin-top:1em
+    }
+    .mainPage nav ul{
+        flex-direction: column;
+        padding: 0;
+    }
+    .mainPage h1{
+        right:0;
+    }
+    .mainPage-h1{
+        font-size: x-large;
+        right:0;
+        top:0;
+    }
+}
+
+/*///////////////////////// end of main page////////////////////////////// */
+
+
+
+
+
+
 #side-bar {
 	display: flex;
 	overflow-x: hidden;
@@ -226,7 +272,7 @@ li a:hover:after{
 	text-align: center;
 	margin: 0;
 	padding: 60px 0 0 0;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
     left:0;
@@ -613,6 +659,19 @@ h1,h3{
 }
 
 /* ////////////quiz css////////////////// */
+ .question:hover .question-content {
+    background-color: lightgray;
+}
+
+ .question-content:hover {
+    background-color: lightgray;
+}
+
+.question-content{
+    padding: .5em 1em;
+    border-radius: 10px;
+}
+
 .quiz-body{
     background-repeat:no-repeat;
     background-size: 50%;
@@ -685,9 +744,8 @@ h1,h3{
 }
 .question{
     border:1px solid black;
-    padding: .5em 1em;
-    margin:.5em
-
+    margin:.5em;
+    border-radius: 10px;
 }
 #question-left-line{
     height: 2px;
